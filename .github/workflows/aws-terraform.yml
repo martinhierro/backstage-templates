@@ -1,4 +1,8 @@
-on: repository_dispatch
+name: CI
+on:
+  push:
+    branches: [ master ]
+  repository_dispatch:
 
 jobs:
   manual_deploy:
