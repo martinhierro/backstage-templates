@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Test scenario tags' 
+        description: 'Apply deploy' 
 
 jobs:
   seria_deploy:
