@@ -1,0 +1,9 @@
+on: repository_dispatch
+
+jobs:
+  manual_deploy:
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
+        with:
+          ref: master
