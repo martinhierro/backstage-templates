@@ -1,6 +1,6 @@
 name: CI
 on:
-  repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   # This workflow contains a single job called "build"
