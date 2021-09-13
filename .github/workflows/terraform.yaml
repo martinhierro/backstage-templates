@@ -3,15 +3,11 @@ name: Deploy
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
       tags:
-        description: 'Apply deploy' 
+        description: 'Deploy' 
 
 jobs:
-  seria_deploy:
+  deploy_terraform:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
