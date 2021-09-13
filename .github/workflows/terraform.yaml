@@ -10,15 +10,7 @@ jobs:
   deploy_terraform:
     runs-on: ubuntu-latest
     steps:
-      # - run: |
-      #     echo GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME
-      #     echo GITHUB_ACTOR: $GITHUB_ACTOR
-      #     echo GITHUB_REPOSITORY: $GITHUB_REPOSITORY
-      #     echo GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER
-      #     echo GITHUB_SHA: $GITHUB_SHA
-      #     echo GITHUB_REF: $GITHUB_REF
-      #     echo GITHUB_HEAD_REF: $GITHUB_HEAD_REF
-      #     echo GITHUB_BASE_REF: $GITHUB_BASE_REF
+
 
       - uses: actions/checkout@v2
 
@@ -28,5 +20,5 @@ jobs:
         id: extract_branch   
 
       - run: |
-        echo ${{ steps.extract_branch.outputs.branch }}
-      
+          echo ${{ steps.extract_branch.outputs.branch }}
+          echo GITHUB_EVENT_NAME: $GITHUB_EVENT_NAME
