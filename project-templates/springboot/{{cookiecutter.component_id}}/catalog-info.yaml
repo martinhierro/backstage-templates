@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{cookiecutter.component_id}}
+  description: {{cookiecutter.description | jsonify}}
+  annotations:
+    github.com/project-slug: {{cookiecutter.destination.git.owner + "/" + cookiecutter.destination.git.name}}
+    #google.com/cloudbuild-project-slug: {{cookiecutter.gcp_project_name}}
+    #jenkins.io/github-folder: {{cookiecutter.jenkins_path_folder}}
+    sonarqube.org/project-key: {{cookiecutter.sonarqube_project_key}}
+    lighthouse.com/website-url: {{cookiecutter.lighthouse_url}}
+    backstage.io/kubernetes-id: {{cookiecutter.kubernetes_component_label}}
+    backstage.io/techdocs-ref: url:{{cookiecutter.storePath}}
+spec:
+  type: service
+  lifecycle: experimental
+  owner: {{cookiecutter.owner}}
+  consumesApis:
+    - {{cookiecutter.consumes_apis}}

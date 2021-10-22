@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{cookiecutter.kubernetes_component_label}}
+  labels:
+    app: hello
+    'backstage.io/kubernetes-id': {{cookiecutter.component_id}}
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: hello
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: hello
+        tier: web
+        'backstage.io/kubernetes-id': {{cookiecutter.component_id}}
+    spec:
+      containers:
+      - name: hello-app
+        image: docker.io/nuga99/IMAGE:GITHUB_SHA
+        ports:
+        - containerPort: {{cookiecutter.http_port}}

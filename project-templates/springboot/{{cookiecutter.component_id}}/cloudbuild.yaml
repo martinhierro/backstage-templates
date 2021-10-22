@@ -1,0 +1,9 @@
+
+steps:
+- name: gradle:6.5.1-jdk11
+  entrypoint: gradle
+  args: ['build']
+
+- name: gradle:6.5.1-jdk11
+  entrypoint: gradle
+  args: ['test']

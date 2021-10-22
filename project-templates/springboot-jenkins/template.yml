@@ -1,0 +1,38 @@
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: springboot-basic-jenkins
+  title: Spring Boot Service with Jenkins
+  description: Create a simple microservice Spring Boot Java
+  tags:
+    - springboot
+    - java
+    - jenkins
+
+spec:
+  owner: dev@example.com
+  templater: cookiecutter
+  type: service
+  path: '.'
+  schema:
+    required:
+      - component_id
+      - description
+    properties:
+      component_id:
+        title: Name
+        type: string
+        description: Unique name of the component
+      description:
+        title: Description
+        type: string
+        description: Help others understand what this service does.
+      http_port:
+        title: Port
+        type: integer
+        default: 8080
+        description: The port to run the Spring Boot Service
+      jenkins_job_name:
+        title: Name
+        type: string
+        description: Jenkins path jobs, in folder_1/folder_2/master format
